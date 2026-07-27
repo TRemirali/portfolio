@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emir Ali Baydoğdu — Computer Engineering Student</title>
+<meta name="description" content="Computer engineering student in Eskişehir. Autonomous drones, live products with real users, and AI tools. TEKNOFEST 2026 · Hackathon winner.">
+<meta property="og:title" content="Emir Ali Baydoğdu — Computer Engineering Student">
+<meta property="og:description" content="Autonomous drones, live products with real users, and AI tools.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFDF9;
+    --ink:#141021;
+    --soft:#5B5470;
+    --rule:#E4DFD4;
+
+    --blue:#2B4FFF;
+    --mint:#0FB981;
+    --pink:#FF2E7E;
+    --violet:#7A3BEF;
+    --tang:#FF6B1A;
+    --lime:#C9EE3B;
+    --teal:#12879A;
+
+    --max:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"DM Sans",system-ui,sans-serif;font-size:17.5px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 26px}
+  .mono{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+  /* ---------------- nav ---------------- */
+  .nav{position:sticky;top:0;z-index:60;background:rgba(255,253,249,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:17px;letter-spacing:-.02em;text-decoration:none}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--pink);margin-right:8px;vertical-align:middle}
+  .navlinks{display:flex;gap:26px}
+  .navlinks a{text-decoration:none;color:var(--soft);font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  .navlinks a:hover,.navlinks a:focus-visible{color:var(--ink)}
+  @media(max-width:760px){.navlinks{display:none}}
+
+  /* ---------------- hero ---------------- */
+  .hero{padding:76px 0 58px;position:relative;overflow:hidden}
+  .eyebrow{color:var(--soft)}
+  .eyebrow b{color:var(--blue);font-weight:500}
+  .name{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(52px,10.5vw,124px);line-height:.86;letter-spacing:-.045em;
+    margin:18px 0 0;max-width:12ch;
+  }
+  .name span{color:var(--blue)}
+  .pitch{font-size:clamp(19px,2.3vw,25px);line-height:1.45;max-width:34ch;margin:26px 0 0;color:var(--ink)}
+  .pitch em{font-style:normal;background:linear-gradient(transparent 62%, #C9EE3B 62%);padding:0 2px}
+  .herorow{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+  .btn{
+    font-family:"DM Mono",monospace;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;
+    text-decoration:none;padding:14px 22px;border-radius:100px;border:1.5px solid var(--ink);
+    transition:transform .15s ease, background .15s ease, color .15s ease;
+  }
+  .btn:hover,.btn:focus-visible{transform:translateY(-2px)}
+  .btn--fill{background:var(--ink);color:var(--paper)}
+  .btn--fill:hover{background:var(--blue);border-color:var(--blue)}
+  .btn--out:hover{background:var(--lime)}
+
+  /* stickers */
+  .stickers{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+  .sticker{
+    border-radius:14px;padding:16px 20px;color:#fff;box-shadow:0 8px 0 rgba(20,16,33,.1);
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:700;line-height:1.2;
+  }
+  .sticker .amt{font-size:30px;letter-spacing:-.02em;display:block}
+  .sticker .who{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:400;opacity:.92;display:block;margin-top:6px}
+  .s1{background:var(--tang);transform:rotate(-2.5deg)}
+  .s2{background:var(--violet);transform:rotate(2deg);margin-left:34px}
+  @media(max-width:900px){
+    .herorow{grid-template-columns:1fr;gap:40px;align-items:start}
+    .stickers{flex-direction:row;flex-wrap:wrap}
+    .s2{margin-left:0}
+  }
+
+  /* stats strip */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);margin-top:64px}
+  .stat{padding:22px 20px;border-right:1px solid var(--rule)}
+  .stat:last-child{border-right:none}
+  .stat .n{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:34px;letter-spacing:-.03em;line-height:1}
+  .stat .l{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--soft);margin-top:8px}
+  .stat:nth-child(1) .n{color:var(--blue)}
+  .stat:nth-child(2) .n{color:var(--mint)}
+  .stat:nth-child(3) .n{color:var(--pink)}
+  .stat:nth-child(4) .n{color:var(--violet)}
+  @media(max-width:760px){
+    .stats{grid-template-columns:1fr 1fr}
+    .stat{border-bottom:1px solid var(--rule)}
+    .stat:nth-child(2){border-right:none}
+    .stat:nth-child(3),.stat:nth-child(4){border-bottom:none}
+  }
+
+  /* ---------------- sections ---------------- */
+  .sec{padding:82px 0 0}
+  .sechead{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+  h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(30px,4.4vw,50px);letter-spacing:-.035em;margin:0}
+  .seclede{color:var(--soft);max-width:52ch;margin:6px 0 34px}
+
+  /* ---------------- work rows ---------------- */
+  .row{
+    --pc:var(--blue); --pt:#fff;
+    display:grid;grid-template-columns:78px 1fr 250px;gap:28px;
+    padding:30px 20px 30px 0;border-top:1.5px solid var(--ink);
+    text-decoration:none;position:relative;
+    transition:background .22s ease,color .22s ease,padding-left .22s ease;
+  }
+  .row:last-of-type{border-bottom:1.5px solid var(--ink)}
+  .row .idx{font-family:"DM Mono",monospace;font-size:13px;color:var(--pc);padding-top:6px;transition:color .22s ease}
+  .row h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(24px,3.2vw,34px);letter-spacing:-.03em;margin:0 0 10px;line-height:1.05}
+  .row p{margin:0;color:var(--soft);max-width:60ch;transition:color .22s ease}
+  .meta{padding-top:8px}
+  .meta .yr{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.08em;color:var(--soft);transition:color .22s ease}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .tag{
+    font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.02em;
+    border:1px solid var(--rule);border-radius:100px;padding:3px 10px;color:var(--soft);
+    transition:border-color .22s ease,color .22s ease;
+  }
+  .badge{
+    display:inline-block;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;background:var(--pc);color:var(--pt);border-radius:100px;
+    padding:4px 11px;margin-bottom:12px;
+  }
+  .row:hover,.row:focus-visible{background:var(--pc);color:var(--pt);padding-left:20px}
+  .row:hover .idx,.row:hover p,.row:hover .yr,.row:focus-visible .idx,.row:focus-visible p,.row:focus-visible .yr{color:var(--pt)}
+  .row:hover .tag,.row:focus-visible .tag{border-color:rgba(255,255,255,.45);color:var(--pt)}
+  .row:hover .badge,.row:focus-visible .badge{background:var(--pt);color:var(--pc)}
+  .row .go{position:absolute;right:20px;top:30px;font-family:"DM Mono",monospace;font-size:13px;opacity:0;transition:opacity .22s ease}
+  .row:hover .go,.row:focus-visible .go{opacity:1}
+  @media(max-width:860px){
+    .row{grid-template-columns:1fr;gap:6px;padding:26px 16px 26px 0}
+    .row .idx{padding-top:0}
+    .row .go{display:none}
+  }
+
+  /* ---------------- two-col blocks ---------------- */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{border:1.5px solid var(--ink);border-radius:16px;padding:26px}
+  .card .kicker{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+  .card h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:21px;letter-spacing:-.02em;margin:10px 0 8px}
+  .card p{margin:0;color:var(--soft);font-size:16px}
+  .card--blue{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .card--lime{background:var(--lime);border-color:var(--ink)}
+  .card--blue .kicker,.card--blue p{color:rgba(255,255,255,.85)}
+  @media(max-width:760px){.cards{grid-template-columns:1fr}}
+
+  /* ---------------- stack ---------------- */
+  .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:8px}
+  .stack h3{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;margin:0 0 14px;font-weight:500}
+  .stack:first-of-type h3{color:var(--blue)}
+  .pills{display:flex;flex-wrap:wrap;gap:8px}
+  .pill{border:1.5px solid var(--ink);border-radius:100px;padding:6px 13px;font-size:14.5px}
+  .pill:nth-child(3n+1){background:#EFF1FF}
+  .pill:nth-child(3n+2){background:#FFF0F6}
+  .pill:nth-child(3n+3){background:#F3FFFA}
+  @media(max-width:760px){.stack{grid-template-columns:1fr;gap:26px}}
+
+  /* ---------------- contact ---------------- */
+  .contact{
+    margin:90px 0 0;background:var(--ink);color:var(--paper);border-radius:26px 26px 0 0;padding:66px 0 46px;
+  }
+  .contact h2{font-size:clamp(34px,6vw,68px);max-width:16ch}
+  .contact h2 span{color:var(--lime)}
+  .clist{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid rgba(255,255,255,.2)}
+  .clist a{
+    display:block;padding:22px 0;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);
+    border-right:1px solid rgba(255,255,255,.2);padding-right:18px;transition:color .15s ease;
+  }
+  .clist a:last-child{border-right:none}
+  .clist a:hover,.clist a:focus-visible{color:var(--lime)}
+  .clist .k{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;display:block;margin-bottom:7px}
+  .clist .v{font-size:16px;word-break:break-word}
+  @media(max-width:760px){
+    .clist{grid-template-columns:1fr}
+    .clist a{border-right:none}
+  }
+  .foot{margin-top:36px;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.1em;opacity:.55}
+
+  :focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="dot"></span>Emir Ali Baydoğdu</a>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#education">Education</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</div>
+
+<div id="top" class="hero">
+  <div class="wrap">
+    <div class="herorow">
+      <div>
+        <div class="mono eyebrow">Computer Engineering · Eskişehir Technical University · Class of <b>2028</b></div>
+        <h1 class="name">Emir Ali <span>Baydoğdu</span></h1>
+        <p class="pitch">I build autonomous drones, marketplaces with <em>real users</em>, and AI tools — and I actually ship them.</p>
+        <div class="cta">
+          <a class="btn btn--fill" href="#work">See the work</a>
+          <a class="btn btn--out" href="mailto:emiralibaydogdu@ogr.eskisehir.edu.tr">Email me</a>
+          <a class="btn btn--out" href="cv.pdf">CV (PDF)</a>
+        </div>
+      </div>
+      <div class="stickers">
+        <div class="sticker s1">
+          <span class="amt">$2.000 · 2nd</span>
+          <span class="who">Tether × Bybit Wallet Hackathon</span>
+        </div>
+        <div class="sticker s2">
+          <span class="amt">₺20.000 · 3rd</span>
+          <span class="who">ATAP Entrepreneurship Competition</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n">3.63</div><div class="l">GPA / 4.00</div></div>
+      <div class="stat"><div class="n">Live</div><div class="l">Product in production</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Hackathon podiums</div></div>
+      <div class="stat"><div class="n">7</div><div class="l">Projects shipped</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec" id="work">
+  <div class="wrap">
+    <div class="sechead"><h2>Selected work</h2></div>
+    <p class="seclede">Drones, marketplaces, blockchain and AI. Different domains, same habit: get it working, put it in front of people.</p>
+
+    <a class="row" style="--pc:var(--blue)" href="#contact">
+      <div class="idx">01</div>
+      <div>
+        <span class="badge">Active · TEKNOFEST 2026</span>
+        <h3>ASABEES — Autonomous FPV Tracking Drone</h3>
+        <p>A drone that locks onto and chases another drone with no GPS at all. Onboard vision runs YOLOv8 + ByteTrack on Hailo hardware; I own the flight-control side — the MAVLink bridge between perception and the Pixhawk 2 Cube, EKF tuning for GPS-denied flight, failsafes, and the ROS2 plumbing that ties it together.</p>
+        <div class="tags"><span class="tag">ArduPilot</span><span class="tag">MAVLink</span><span class="tag">ROS2</span><span class="tag">Pixhawk 2 Cube</span><span class="tag">Raspberry Pi 5</span><span class="tag">Python</span></div>
+      </div>
+      <div class="meta"><div class="yr">2026 — present</div></div>
+      <span class="go">→</span>
+    </a>
+
+    <a class="row" style="--pc:var(--mint)" href="https://devreden.com.tr" target="_blank" rel="noopener">
+      <div class="idx">02</div>
+      <div>
+        <span class="badge">Live · devreden.com.tr</span>
+        <h3>Devreden — Student Housing &amp; Second-Hand Platform</h3>
+        <p>Every June, thousands of students in Eskişehir hand over a lease and dump their furniture, and there was no decent place to do either. Devreden is that place: lease transfers, roommate matching and second-hand goods, with zero commission and .edu.tr email verification so it stays students-only. Built it end to end and it's running with real listings today.</p>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Tailwind</span><span class="tag">Auth</span></div>
+      </div>
+      <div class="meta"><div class="yr">2026 — present</div></div>
+      <span class="go">↗</span>
+    </a>
+
+    <a class="row" style="--pc:var(--violet)" href="#contact">
+      <div class="idx">03</div>
+      <div>
+        <span class="badge">3rd place · ₺20.000</span>
+        <h3>Q-AURA — AI Certification Platform</h3>
+        <p>Certification paperwork eats weeks of a small manufacturer's time. Q-AURA automates the grind: it reads the requirements, checks the submission and flags what's missing before a human auditor ever sees it. Built the prototype and pitched it to a judging panel at a three-day competition run by ETGB and ATAP, against teams from across the region.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">LLM automation</span><span class="tag">PostgreSQL</span><span class="tag">Next.js</span></div>
+      </div>
+      <div class="meta"><div class="yr">2026</div></div>
+      <span class="go">→</span>
+    </a>
+
+    <a class="row" style="--pc:var(--pink)" href="#contact">
+      <div class="idx">04</div>
+      <div>
+        <span class="badge">Product</span>
+        <h3>OnyxFit AI — Virtual Try-On for Fashion Brands</h3>
+        <p>Puts a garment on a model photo in seconds, so a boutique doesn't need a photo shoot for every item. I built the app end to end, then an automated pipeline (n8n + Claude API + Apify) that finds and qualifies Turkish fashion businesses to sell it to — because a product with no customers isn't a product.</p>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Diffusion models</span><span class="tag">n8n</span><span class="tag">Claude API</span></div>
+      </div>
+      <div class="meta"><div class="yr">2026</div></div>
+      <span class="go">→</span>
+    </a>
+
+    <a class="row" style="--pc:var(--tang)" href="#contact">
+      <div class="idx">05</div>
+      <div>
+        <span class="badge">2nd of 10 · $2.000</span>
+        <h3>AI Crypto Wallet — Tether × Bybit Hackathon</h3>
+        <p>A non-custodial wallet you talk to. Built on the Tether Wallet Development Kit with an AI agent on top, so you can send funds or check a balance by voice or plain sentence instead of pasting addresses. Placed 2nd out of ten teams in Istanbul on a live demo.</p>
+        <div class="tags"><span class="tag">Tether WDK</span><span class="tag">AI agents</span><span class="tag">JavaScript</span><span class="tag">Web3</span></div>
+      </div>
+      <div class="meta"><div class="yr">Nov 2025</div></div>
+      <span class="go">→</span>
+    </a>
+
+    <a class="row" style="--pc:var(--lime);--pt:var(--ink)" href="#contact">
+      <div class="idx">06</div>
+      <div>
+        <span class="badge">Team lead</span>
+        <h3>Decentralized Crowdfunding — Stellar Hack Pera</h3>
+        <p>A crowdfunding platform on Stellar where backers can see exactly where their money goes and funds release against milestones instead of vanishing into a founder's wallet. Led the team through the build and kept the milestones on track under hackathon pressure.</p>
+        <div class="tags"><span class="tag">Stellar SDK</span><span class="tag">Smart contracts</span><span class="tag">React</span><span class="tag">Node.js</span></div>
+      </div>
+      <div class="meta"><div class="yr">Jun 2025</div></div>
+      <span class="go">→</span>
+    </a>
+
+    <a class="row" style="--pc:var(--teal)" href="#contact">
+      <div class="idx">07</div>
+      <div>
+        <span class="badge">Where it started</span>
+        <h3>Uzatel Robotics — Gesture-Controlled Ground Vehicle</h3>
+        <p>An unmanned ground vehicle driven by hand movements: an accelerometer glove reads the gesture, a radio link carries it, and the motor board on the vehicle acts on it. Custom 3D-printed chassis and hand-built circuits. High school, and the reason I ended up doing this.</p>
+        <div class="tags"><span class="tag">Embedded C</span><span class="tag">Accelerometer</span><span class="tag">RF comms</span><span class="tag">3D printing</span></div>
+      </div>
+      <div class="meta"><div class="yr">2022</div></div>
+      <span class="go">→</span>
+    </a>
+  </div>
+</div>
+
+<div class="sec" id="education">
+  <div class="wrap">
+    <div class="sechead"><h2>Education &amp; teams</h2></div>
+    <p class="seclede">What I'm studying, and the groups I help run.</p>
+    <div class="cards">
+      <div class="card card--blue">
+        <div class="kicker">2024 — 2028 (expected)</div>
+        <h3>BSc Computer Engineering</h3>
+        <p>Eskişehir Technical University · GPA 3.63 / 4.00. Coursework across algorithms, databases, and systems, alongside everything above.</p>
+      </div>
+      <div class="card card--lime">
+        <div class="kicker">Feb 2026 — present</div>
+        <h3>Board Member &amp; DevTeam Lead</h3>
+        <p>ESTU Blockchain Club. I lead the development team, take club projects from idea to working prototype, and run hands-on Web3 workshops.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Sep 2024 — present</div>
+        <h3>Active Member</h3>
+        <p>EESTEC LC Eskişehir. Organize career events and technical workshops with industry professionals — logistics, resources, and getting students in the room.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Languages</div>
+        <h3>Turkish &amp; English</h3>
+        <p>Turkish native. English advanced — YÖKDİL 71.25 / 100. Comfortable working, presenting and writing documentation in both.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec" id="stack">
+  <div class="wrap">
+    <div class="sechead"><h2>Toolkit</h2></div>
+    <p class="seclede">What I reach for, roughly in order of how often.</p>
+    <div class="stack">
+      <div>
+        <h3>Languages</h3>
+        <div class="pills"><span class="pill">Python</span><span class="pill">TypeScript</span><span class="pill">JavaScript</span><span class="pill">Java</span><span class="pill">C++</span><span class="pill">HTML/CSS</span></div>
+      </div>
+      <div>
+        <h3>Web &amp; data</h3>
+        <div class="pills"><span class="pill">Next.js</span><span class="pill">React</span><span class="pill">Node.js</span><span class="pill">Tailwind</span><span class="pill">PostgreSQL</span><span class="pill">Git</span></div>
+      </div>
+      <div>
+        <h3>Robotics, AI &amp; Web3</h3>
+        <div class="pills"><span class="pill">ArduPilot</span><span class="pill">MAVLink</span><span class="pill">ROS2</span><span class="pill">YOLOv8</span><span class="pill">Stellar SDK</span><span class="pill">Tether WDK</span><span class="pill">n8n</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contact" id="contact">
+  <div class="wrap">
+    <h2>Looking for a summer <span>internship</span>.</h2>
+    <p class="seclede" style="color:rgba(255,253,249,.7);margin-top:18px">Robotics software, applied AI, or full-stack. Happy to walk you through any project above — or just send the flight logs.</p>
+    <div class="clist">
+      <a href="mailto:emiralibaydogdu@ogr.eskisehir.edu.tr">
+        <span class="k">Email</span><span class="v">emiralibaydogdu@ogr.eskisehir.edu.tr</span>
+      </a>
+      <a href="https://linkedin.com/in/emiralibaydogdu/" target="_blank" rel="noopener">
+        <span class="k">LinkedIn</span><span class="v">/in/emiralibaydogdu</span>
+      </a>
+      <a href="https://github.com/TRemirali" target="_blank" rel="noopener">
+        <span class="k">GitHub</span><span class="v">/TRemirali</span>
+      </a>
+    </div>
+    <div class="foot">Eskişehir, Türkiye · © 2026</div>
+  </div>
+</div>
+
+</body>
+</html>
