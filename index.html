@@ -172,6 +172,52 @@
   .pill:nth-child(3n+3){background:#F3FFFA}
   @media(max-width:760px){.stack{grid-template-columns:1fr;gap:26px}}
 
+  /* ---------------- in the field (polaroid strip) ---------------- */
+  .field-strip{
+    display:flex;gap:18px;
+    padding:34px 26px 46px;
+    padding-left:max(26px,calc(50vw - 564px));
+    scroll-padding-left:max(26px,calc(50vw - 564px));
+    overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-x:contain;
+    scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .field-strip::-webkit-scrollbar{display:none}
+  .polaroid{
+    flex:0 0 auto;
+    background:#fff;padding:10px;border-radius:14px;
+    box-shadow:0 12px 30px rgba(20,16,33,.18);
+    scroll-snap-align:start;
+    transition:transform .25s ease;
+    display:flex;flex-direction:column;
+  }
+  .polaroid img{
+    height:300px;width:auto;object-fit:cover;
+    border-radius:8px;display:block;
+  }
+  .polaroid .cap{margin-top:12px;padding:2px 2px 0}
+  .polaroid .cap span{display:block;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;line-height:1.5}
+  .polaroid .cap .ev{color:var(--ink)}
+  .polaroid .cap .pl{color:var(--soft)}
+  .field-strip .polaroid:nth-child(4n+1){transform:rotate(-2deg)}
+  .field-strip .polaroid:nth-child(4n+2){transform:rotate(1.5deg)}
+  .field-strip .polaroid:nth-child(4n+3){transform:rotate(-1deg)}
+  .field-strip .polaroid:nth-child(4n){transform:rotate(2deg)}
+  .field-strip .polaroid:hover,.field-strip .polaroid:focus-visible{transform:rotate(0deg) translateY(-6px)}
+  @media(max-width:760px){
+    .polaroid img{height:240px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .field-strip .polaroid,
+    .field-strip .polaroid:nth-child(4n+1),
+    .field-strip .polaroid:nth-child(4n+2),
+    .field-strip .polaroid:nth-child(4n+3),
+    .field-strip .polaroid:nth-child(4n),
+    .field-strip .polaroid:hover,
+    .field-strip .polaroid:focus-visible{transform:none}
+  }
+
   /* ---------------- contact ---------------- */
   .contact{
     margin:90px 0 0;background:var(--ink);color:var(--paper);border-radius:26px 26px 0 0;padding:66px 0 46px;
@@ -362,6 +408,51 @@
         <p>Turkish native. English advanced — YÖKDİL 71.25 / 100. Comfortable working, presenting and writing documentation in both.</p>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="sec" id="field">
+  <div class="wrap">
+    <div class="sechead"><h2>In the field</h2></div>
+    <p class="seclede">Hackathon halls, drone tests and club stages — the stuff between the commits.</p>
+  </div>
+  <div class="field-strip">
+    <figure class="polaroid" tabindex="0">
+      <img src="images/field/1-asabees-field-test.jpeg" loading="lazy" alt="Emir Ali holding a custom FPV racing drone during a field test">
+      <figcaption class="cap"><span class="ev">ASABEES field test</span><span class="pl">Eskişehir · 2026</span></figcaption>
+    </figure>
+    <figure class="polaroid" tabindex="0">
+      <img src="images/field/2-bybit-wallet-hackathon.jpeg" loading="lazy" alt="Four-person team holding the Future of Wallet Hackathon second-place check for $2,000">
+      <figcaption class="cap"><span class="ev">Wallet Hackathon — 2nd</span><span class="pl">Istanbul · Nov 2025</span></figcaption>
+    </figure>
+    <figure class="polaroid" tabindex="0">
+      <img src="images/field/3-atap-entrepreneurship.jpeg" loading="lazy" alt="Holding the ATAP entrepreneurship competition third-place check for 20,000 lira">
+      <figcaption class="cap"><span class="ev">ATAP — 3rd place</span><span class="pl">Eskişehir · 2026</span></figcaption>
+    </figure>
+    <figure class="polaroid" tabindex="0">
+      <img src="images/field/4-estu-blockchain-workshop.jpeg" loading="lazy" alt="Emir Ali presenting a technology-stack slide at an ESTU Blockchain Club workshop">
+      <figcaption class="cap"><span class="ev">Blockchain workshop</span><span class="pl">Eskişehir · 2026</span></figcaption>
+    </figure>
+    <figure class="polaroid" tabindex="0">
+      <img src="images/field/5-stellar-hack-pera.jpeg" loading="lazy" alt="Standing in front of the Stellar Hack Pera backdrop at a hackathon in Istanbul">
+      <figcaption class="cap"><span class="ev">Stellar Hack Pera</span><span class="pl">Istanbul · Jun 2025</span></figcaption>
+    </figure>
+    <figure class="polaroid" tabindex="0">
+      <img src="images/field/6-building.jpeg" loading="lazy" alt="Emir Ali coding on a laptop at a hackathon workspace">
+      <figcaption class="cap"><span class="ev">Heads-down building</span><span class="pl">Istanbul · 2025</span></figcaption>
+    </figure>
+    <figure class="polaroid" tabindex="0">
+      <img src="images/field/7-takeoff-istanbul.jpeg" loading="lazy" alt="Standing next to the Takeoff Istanbul startup event sign at Istanbul Airport">
+      <figcaption class="cap"><span class="ev">Takeoff Istanbul</span><span class="pl">Istanbul · 2025</span></figcaption>
+    </figure>
+    <figure class="polaroid" tabindex="0">
+      <img src="images/field/8-hackathon-latenight.jpeg" loading="lazy" alt="Late-night selfie at Stellar Hack Pera wearing a 404 sleep not found cap">
+      <figcaption class="cap"><span class="ev">404: sleep not found</span><span class="pl">Stellar Hack Pera · 2025</span></figcaption>
+    </figure>
+    <figure class="polaroid" tabindex="0">
+      <img src="images/field/9-istanbul.jpeg" loading="lazy" alt="Sitting on an Istanbul street with the Bosphorus and a mosque in the background">
+      <figcaption class="cap"><span class="ev">Off the clock</span><span class="pl">Istanbul · 2025</span></figcaption>
+    </figure>
   </div>
 </div>
 
